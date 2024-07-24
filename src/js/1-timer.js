@@ -14,7 +14,7 @@ const timerFieldSeconds = document.querySelector('[data-seconds]');
 let userSelectedDate = null;
 let timerId = null;
 let isActive = false;
-
+btnStartTimer.disabled = true;
 inputPicker.disabled = false;
 
 const options = {
@@ -26,7 +26,8 @@ const options = {
     const currentDate = new Date();
     if (selectedDates[0] - currentDate > 0) {
       userSelectedDate = selectedDates[0];
-      btnStartTimer.style.background = '#4e75ff';
+      btnStartTimer.disabled = false;
+      console.dir(btnStartTimer.disabled);
     } else {
       iziToast.error({
         title: 'Error',
@@ -34,7 +35,8 @@ const options = {
         position: 'topRight',
         transitionIn: 'bounceInDown',
       });
-      btnStartTimer.style.background = '#cfcfcf';
+      btnStartTimer.disabled = true;
+      console.dir(btnStartTimer.disabled);
     }
   },
 };
@@ -45,7 +47,8 @@ btnStartTimer.addEventListener('click', onTimerStart);
 
 function onTimerStart() {
   inputPicker.disabled = true;
-  btnStartTimer.style.background = '#cfcfcf';
+  btnStartTimer.disabled = true;
+  console.dir(btnStartTimer.disabled);
   if (isActive) {
     return;
   }

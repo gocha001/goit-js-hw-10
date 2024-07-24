@@ -44,10 +44,11 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #989898;
+  background: #4e75ff;
 }
 
-.btn:active {
-  background: #4e75ff;
+.btn:disabled {
+  background: #cfcfcf;
 }
 
 .timer {
